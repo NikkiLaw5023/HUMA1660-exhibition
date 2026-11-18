@@ -46,4 +46,248 @@
       letter-spacing: 0.08em;
     }
     nav a { color: var(--ink-secondary); text-decoration: none; }
-    nav a:hover { color: var(--accent); text-decoration: underline; text-underline
+    nav a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+    .deck-container {
+      max-width: 960px;
+      margin: 0 auto;
+      border: 1.5px solid var(--line);
+      background: var(--card-bg);
+      padding: 60px;
+      box-shadow: 10px 10px 0px var(--line-light);
+    }
+    header {
+      border-bottom: 1.5px solid var(--line);
+      padding-bottom: 40px;
+      margin-bottom: 52px;
+    }
+    .badge {
+      display: inline-block;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      background: var(--accent);
+      color: #fcfbf9;
+      padding: 4px 12px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(1.85rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .subtitle {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 1.05rem;
+      color: var(--ink-secondary);
+      margin-bottom: 20px;
+    }
+    .team-line {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    section, footer { scroll-margin-top: 76px; }
+    section {
+      margin-bottom: 64px;
+      padding-bottom: 64px;
+      border-bottom: 1px solid var(--line-light);
+    }
+    section:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .section-title {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    h2 { font-size: 1.65rem; font-weight: 700; margin-bottom: 20px; }
+    .unit-box {
+      background-color: var(--subtle-bg);
+      border-left: 3.5px solid var(--accent);
+      padding: 24px 28px;
+      margin-bottom: 44px;
+    }
+    .unit-box h3 { font-size: 1.25rem; margin-bottom: 8px; }
+    .unit-box p { font-size: 0.92rem; color: var(--ink-secondary); }
+    .exhibit-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 56px;
+    }
+    .exhibit-grid:last-child { margin-bottom: 0; }
+    .artwork-box {
+      border: 1px solid var(--line);
+      padding: 14px;
+      background: #ffffff;
+    }
+    .artwork-box img {
+      width: 100%;
+      height: auto;
+      max-height: 540px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+    .caption {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+    .exhibit-heading { font-size: 1.35rem; font-weight: 700; margin-bottom: 14px; }
+    .meta-box {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.85rem;
+      color: var(--ink-secondary);
+      background: var(--subtle-bg);
+      border-left: 3px solid var(--accent);
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      line-height: 1.75;
+    }
+    .text-content p { font-size: 0.96rem; margin-bottom: 16px; text-align: justify; }
+    footer {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1.5px solid var(--line);
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.85rem;
+      color: var(--ink-secondary);
+    }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+    footer h3 { font-family: 'Noto Serif TC', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 12px; }
+    footer ul { padding-left: 18px; }
+    footer li { margin-bottom: 6px; line-height: 1.6; }
+    @media (max-width: 780px) {
+      .deck-container { padding: 24px; box-shadow: 5px 5px 0px var(--line-light); }
+      .exhibit-grid, .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#intro">展覽導言</a>
+    <a href="#unit1">第一單元：廟堂秩序</a>
+    <a href="#unit2">第二單元：閨閣私語</a>
+    <a href="#conclusion">結語</a>
+    <a href="#credits">參考文獻與團隊</a>
+  </nav>
+
+  <div class="deck-container">
+    <header>
+      <span class="badge">HUMA 1660 中國藝術導論 · 線上專題展覽</span>
+      <h1>誰在聽？誰在彈？——畫中「聽琴」的兩種傳統</h1>
+      <div class="subtitle">從廟堂政治修辭到閨閣私密觀看</div>
+      <div class="team-line">策展團隊：組員一姓名、組員二姓名、組員三姓名、組員四姓名</div>
+    </header>
+
+    <section id="intro">
+      <div class="section-title">01 / Introduction</div>
+      <h2>展覽導言</h2>
+      <div class="text-content">
+        <p>【示範文字】在中國古代繪畫史中，「琴」不僅是一件樂器，更是一套高度視覺化的文化符號。然而，畫中無聲，觀者究竟如何「看見」琴聲？本展不從樂器形制或曲譜演變切入，而是將目光投向撫琴者與聆聽者之間的空間關係與身體姿態。</p>
+        <p>【示範文字】透過對比北宋宮廷與明代文人筆下的《聽琴圖》，本展邀請觀眾思考三個核心問題：在特定的歷史語境中，誰擁有撫琴發聲的權力？誰被安排在側傾聽？而「聽」的姿態又如何從公開的君臣禮法，轉化為私密的閨閣觀看？</p>
+      </div>
+    </section>
+
+    <section id="unit1">
+      <div class="section-title">02 / Unit I</div>
+      <h2>第一單元：廟堂與君臣秩序</h2>
+      <div class="unit-box">
+        <h3>政治修辭下的琴聲</h3>
+        <p>【示範文字】在北宋宮廷繪畫傳統中，撫琴與聽琴往往承載著「以樂治國」與君臣和諧的政治隱喻，人物的高低、朝向與距離皆經過嚴密設計。</p>
+      </div>
+      <div class="exhibit-grid">
+        <div class="artwork-box">
+          <img src="01_huizong_full.jpg" alt="傳 宋徽宗 聽琴圖軸">
+          <div class="caption">圖1：傳 宋徽宗《聽琴圖》軸（全圖）｜北京故宮博物院藏</div>
+        </div>
+        <div>
+          <h3 class="exhibit-heading">傳 宋徽宗《聽琴圖》軸</h3>
+          <div class="meta-box">
+            作者：傳 趙佶（宋徽宗，1082–1135）<br>
+            年代：北宋｜媒材：絹本設色<br>
+            尺寸：縱 147.2 厘米，橫 51.3 厘米<br>
+            收藏：北京故宮博物院
+          </div>
+          <div class="text-content">
+            <p>【示範文字】畫面中央，身著道袍的撫琴者端坐於古松與翠竹之下，神情沉靜專注，雙手輕按琴弦。其居高臨下的中軸線位置，確立了全畫無可置疑的視覺與權力核心。</p>
+            <p>【示範文字】左右兩側分坐紅衣與青衣朝臣，二人身體微傾、目光低垂，呈現出屏息恭聽的姿態。畫家藉由服色對比與三角構圖，將無形的琴韻轉化為井然有序的廟堂政治修辭。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="unit2">
+      <div class="section-title">03 / Unit II</div>
+      <h2>第二單元：閨閣與私密觀看</h2>
+      <div class="unit-box">
+        <h3>性別視角下的聽覺空間</h3>
+        <p>【示範文字】當撫琴的主體由帝王文士轉向閨閣女子，聽琴場景便從莊嚴的禮法空間退入內宅庭園，演變為一場充滿凝視與私密趣味的視覺敘事。</p>
+      </div>
+      <div class="exhibit-grid">
+        <div class="artwork-box">
+          <img src="02_chenhongshou_full.jpg" alt="明 陳洪綬 聽琴圖軸">
+          <div class="caption">圖2：明 陳洪綬《聽琴圖》軸（全圖）｜北京故宮博物院藏</div>
+        </div>
+        <div>
+          <h3 class="exhibit-heading">明 陳洪綬《聽琴圖》軸</h3>
+          <div class="meta-box">
+            作者：陳洪綬（1598–1652）<br>
+            年代：明代｜媒材：絹本設色<br>
+            尺寸：縱 115.6 厘米，橫 42.3 厘米<br>
+            收藏：北京故宮博物院
+          </div>
+          <div class="text-content">
+            <p>【示範文字】此作以高古奇駭的線條描繪女子臨案撫琴，身旁侍女依序排立，神態恭謹而內斂，營造出清幽封閉的閨閣氛圍。</p>
+            <p>【示範文字】值得注意的是畫面邊緣側耳傾聽的男子形象——他並未正襟危坐於琴案之前，而是處於一種既參與又抽離的觀看位置，揭示了明代文人畫中「聽琴」母題向性別與情致轉向的微妙張力。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conclusion">
+      <div class="section-title">04 / Conclusion</div>
+      <h2>結語</h2>
+      <div class="text-content">
+        <p>【示範文字】從北宋宮廷的松下撫琴，到明代畫家筆下的閨閣清音，「聽琴」始終不只是對音樂的再現，更是一面映照時代權力結構與觀看方式的鏡子。</p>
+        <p>【示範文字】當我們重新審視畫中「誰在彈」與「誰在聽」，無聲的絹素便再次響起跨越時代的歷史迴音。</p>
+      </div>
+    </section>
+
+    <footer id="credits">
+      <div class="footer-grid">
+        <div>
+          <h3>參考文獻與圖片來源</h3>
+          <ul>
+            <li>北京故宮博物院數字文物庫：https://digicol.dpm.org.cn/</li>
+            <li>【示範文字】請在此補上其餘館藏頁面網址與學術參考書目，須與 Word 文檔一致。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>策展團隊與分工</h3>
+          <ul>
+            <li><strong>組員一姓名：</strong>展覽主題構思、導言與結語撰寫</li>
+            <li><strong>組員二姓名：</strong>展品 01–02 文字撰寫與文獻核實</li>
+            <li><strong>組員三姓名：</strong>展品 03–04 文字撰寫與圖像細節整理</li>
+            <li><strong>組員四姓名：</strong>全稿文字統整、Word 文檔排版與展覽網頁製作</li>
+          </ul>
+          <p style="font-size: 0.76rem; color: var(--muted); margin-top: 10px;">
+            （註：依作業規定，網頁僅公開組員姓名與分工，學號僅列於提交之 Word 文檔中。）
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
