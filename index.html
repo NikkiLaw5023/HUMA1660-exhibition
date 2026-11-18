@@ -35,14 +35,18 @@
       color: var(--ink);
       font-family: 'Noto Serif TC', "Songti TC", "SimSun", serif;
       line-height: 1.9;
-      padding: 40px 20px;
+      padding: 24px 20px 60px;
     }
 
+    /* 置頂導覽列（滾動時固定於上方，方便隨時跳轉） */
     nav {
+      position: sticky;
+      top: 12px;
+      z-index: 100;
       max-width: 960px;
       margin: 0 auto 24px;
       padding: 12px 20px;
-      background-color: var(--card-bg);
+      background-color: rgba(252, 251, 249, 0.96);
       border: 1px solid var(--line);
       display: flex;
       justify-content: center;
@@ -82,204 +86,3 @@
     .badge {
       display: inline-block;
       font-family: 'Noto Sans TC', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      background: var(--accent);
-      color: #fcfbf9;
-      padding: 4px 12px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: clamp(1.85rem, 4vw, 2.75rem);
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      line-height: 1.35;
-      margin-bottom: 16px;
-      color: var(--ink);
-    }
-
-    .subtitle {
-      font-family: 'Noto Sans TC', sans-serif;
-      font-size: 1.05rem;
-      color: var(--ink-secondary);
-      margin-bottom: 20px;
-    }
-
-    .team-line {
-      font-family: 'Noto Sans TC', sans-serif;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    section {
-      margin-bottom: 60px;
-      padding-bottom: 60px;
-      border-bottom: 1px solid var(--line-light);
-    }
-
-    section:last-of-type {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .section-title {
-      font-family: 'Noto Sans TC', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    h2 {
-      font-size: 1.65rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 20px;
-    }
-
-    .unit-box {
-      background-color: var(--subtle-bg);
-      border-left: 3.5px solid var(--accent);
-      padding: 24px 28px;
-      margin-bottom: 44px;
-    }
-
-    .unit-box h3 {
-      font-size: 1.25rem;
-      margin-bottom: 8px;
-      color: var(--ink);
-    }
-
-    .unit-box p {
-      font-size: 0.92rem;
-      color: var(--ink-secondary);
-    }
-
-    .exhibit-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 40px;
-      align-items: start;
-      margin-bottom: 56px;
-    }
-
-    .exhibit-grid:last-child {
-      margin-bottom: 0;
-    }
-
-    .artwork-box {
-      border: 1px solid var(--line);
-      padding: 14px;
-      background: #ffffff;
-    }
-
-    .artwork-box img {
-      width: 100%;
-      height: auto;
-      max-height: 540px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .caption {
-      font-family: 'Noto Sans TC', sans-serif;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 10px;
-      line-height: 1.5;
-    }
-
-    .exhibit-heading {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 14px;
-      color: var(--ink);
-    }
-
-    .meta-box {
-      font-family: 'Noto Sans TC', sans-serif;
-      font-size: 0.85rem;
-      color: var(--ink-secondary);
-      background: var(--subtle-bg);
-      border-left: 3px solid var(--accent);
-      padding: 12px 16px;
-      margin-bottom: 20px;
-      line-height: 1.75;
-    }
-
-    .text-content p {
-      font-size: 0.96rem;
-      margin-bottom: 16px;
-      text-align: justify;
-      color: var(--ink);
-    }
-
-    footer {
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1.5px solid var(--line);
-      font-family: 'Noto Sans TC', sans-serif;
-      font-size: 0.85rem;
-      color: var(--ink-secondary);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 36px;
-    }
-
-    footer h3 {
-      font-family: 'Noto Serif TC', serif;
-      font-size: 1.05rem;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-
-    footer ul {
-      padding-left: 18px;
-    }
-
-    footer li {
-      margin-bottom: 6px;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 780px) {
-      .deck-container {
-        padding: 24px;
-        box-shadow: 5px 5px 0px var(--line-light);
-      }
-      .exhibit-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <nav>
-    <a href="#intro">展覽導言</a>
-    <a href="#unit1">第一單元：廟堂秩序</a>
-    <a href="#unit2">第二單元：閨閣私語</a>
-    <a href="#conclusion">結語</a>
-    <a href="#credits">參考文獻與團隊</a>
-  </nav>
-
-  <div class="deck-container">
-    <header>
-      <span class="badge">HUMA 1660 中國藝術導論 · 線上專題展覽</span>
-      <h1>誰在聽？誰在彈？——畫中「聽琴」的兩種傳統</h1>
-      <div class="subtitle">從廟堂政治修辭到閨閣私密觀看</div>
-      <div class="team-line">策展團隊：組員一姓名、組員二姓名、組員三姓名、組員四姓名</div>
-    </header>
-
-    <section id="intro
