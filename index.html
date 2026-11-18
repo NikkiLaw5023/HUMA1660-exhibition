@@ -19,17 +19,8 @@
       --line-light: #dcd8d0;
       --accent: #9c3030;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       background-color: var(--paper);
       color: var(--ink);
@@ -37,8 +28,6 @@
       line-height: 1.9;
       padding: 24px 20px 60px;
     }
-
-    /* 置頂導覽列（滾動時固定於上方，方便隨時跳轉） */
     nav {
       position: sticky;
       top: 12px;
@@ -56,33 +45,5 @@
       font-size: 0.85rem;
       letter-spacing: 0.08em;
     }
-
-    nav a {
-      color: var(--ink-secondary);
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-
-    .deck-container {
-      max-width: 960px;
-      margin: 0 auto;
-      border: 1.5px solid var(--line);
-      background: var(--card-bg);
-      padding: 60px;
-      box-shadow: 10px 10px 0px var(--line-light);
-    }
-
-    header {
-      border-bottom: 1.5px solid var(--line);
-      padding-bottom: 40px;
-      margin-bottom: 52px;
-    }
-
-    .badge {
-      display: inline-block;
-      font-family: 'Noto Sans TC', sans-serif;
+    nav a { color: var(--ink-secondary); text-decoration: none; }
+    nav a:hover { color: var(--accent); text-decoration: underline; text-underline
