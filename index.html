@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>誰在聽？誰在彈？——畫中「聽琴」的兩種傳統</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-paper: #f9f8f6;
+      --bg-card: #f2f0ec;
+      --ink-primary: #1c1c1c;
+      --ink-secondary: #4a4a4a;
+      --ink-muted: #737373;
+      --border-gray: #d8d5ce;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-paper);
+      color: var(--ink-primary);
+      font-family: 'Noto Serif TC', "Songti TC", "SimSun", serif;
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    /* 頂部極簡導覽列 */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(249, 248, 246, 0.95);
+      border-bottom: 1px solid var(--border-gray);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+    }
+
+    nav a {
+      color: var(--ink-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--ink-primary);
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    /* 版面主容器 */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* 首頁主視覺區 */
+    header {
+      padding: 96px 0 72px;
+      border-bottom: 1px solid var(--border-gray);
+      text-align: center;
+    }
+
+    .course-tag {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      color: var(--ink-muted);
+      margin-bottom: 18px;
+    }
+
+    header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--ink-secondary);
+      letter-spacing: 0.08em;
+      margin-bottom: 36px;
+    }
+
+    .hero-rule {
+      width: 48px;
+      height: 1.5px;
+      background-color: var(--ink-primary);
+      margin: 0 auto 28px;
+    }
+
+    .team-header {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.88rem;
+      color: var(--ink-secondary);
+    }
+
+    /* 通用章節區塊 */
+    section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .section-label {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 28px;
+    }
+
+    .essay-block {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .essay-block p {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    /* 單元過場區 */
+    .unit-banner {
+      background-color: var(--bg-card);
+      padding: 48px 36px;
+      margin-bottom: 56px;
+      border-left: 3px solid var(--ink-primary);
+    }
+
+    .unit-banner h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .unit-banner p {
+      color: var(--ink-secondary);
+      max-width: 760px;
+      font-size: 0.95rem;
+    }
+
+    /* 展品雙欄圖文區 */
+    .exhibit-item {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 84px;
+    }
+
+    .exhibit-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .artwork-frame {
+      background-color: #ffffff;
+      padding: 20px;
+      border: 1px solid var(--border-gray);
+      text-align: center;
+    }
+
+    /* 嚴格保持原圖比例與色彩，絕不裁切變形 */
+    .artwork-frame img {
+      width: 100%;
+      height: auto;
+      max-height: 680px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .caption {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    .detail-box {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px dashed var(--border-gray);
+    }
+
+    .exhibit-info h3 {
+      font-size: 1.45rem;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .metadata {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.85rem;
+      color: var(--ink-secondary);
+      border-left: 2.5px solid var(--ink-secondary);
+      padding-left: 14px;
+      margin-bottom: 24px;
+      line-height: 1.75;
+    }
+
+    .exhibit-text p {
+      margin-bottom: 16px;
+      text-align: justify;
+      font-size: 0.98rem;
+    }
+
+    /* 頁尾與參考資料 */
+    footer {
+      padding: 64px 0 84px;
+      font-size: 0.9rem;
+      color: var(--ink-secondary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    footer h3 {
+      font-size: 1.15rem;
+      color: var(--ink-primary);
+      margin-bottom: 16px;
+    }
+
+    footer ul {
+      padding-left: 18px;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+      line-height: 1.65;
+    }
+
+    /* 手機與平板響應式調整 */
+    @media (max-width: 820px) {
+      .exhibit-item,
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <nav>
+    <a href="#intro">展覽導言</a>
+    <a href="#unit1">第一單元：廟堂秩序</a>
+    <a href="#unit2">第二單元：閨閣私語</a>
+    <a href="#conclusion">結語</a>
+    <a href="#credits">參考文獻與團隊</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- 首頁標題與策展人署名 -->
+    <header>
+      <p class="course-tag">HUMA 1660 中國藝術導論 · 線上專題展覽</p>
+      <h1>誰在聽？誰在彈？<br>——畫中「聽琴」的兩種傳統</h1>
+      <p class="subtitle">從政治修辭的空間建構到閨閣聽覺的私密觀看</p>
+      <div class="hero-rule"></div>
+      <p class="team-header">策展團隊：組員一姓名、組員二姓名、組員三姓名、組員四姓名</p>
+    </header>
+
+    <!-- 展覽導言 -->
+    <section id="intro">
+      <div class="essay-block">
+        <p class="section-label">Introduction</p>
+        <h2>展覽導言</h2>
+        <p>【請在此貼上你們小組撰寫的「展覽導言」，建議字數控制在 400–450 字。】</p>
+        <p>【說明本展不探討樂器形制演變，而是聚焦不同時代與畫家筆下「誰有資格彈、誰被安排來聽、聽的時候身體姿態如何」，揭示琴聲背後的政治權力與性別觀看史。】</p>
+      </div>
+    </section>
+
+    <!-- 第一單元 -->
+    <section id="unit1">
+      <div class="unit-banner">
+        <p class="section-label">Unit 01 · 第一單元</p>
+        <h3>君臣與廟堂：政治修辭下的琴聲</h3>
+        <p>【選填：若設置單元介紹，建議 70–130 字（不計入正文總字數）。簡述本單元如何透過撫琴與聽琴的姿態建構君臣秩序與文人認同。】</p>
+      </div>
+
+      <!-- 展品 01 -->
+      <article class="exhibit-item">
+        <div class="artwork-frame">
+          <img src="01_huizong_full.jpg" alt="傳 宋徽宗 聽琴圖軸">
+          <p class="caption">圖1：傳 宋徽宗《聽琴圖》軸（全圖）｜圖片來源：北京故宮博物院</p>
+
+          <!-- 若有細部圖可保留此區塊，若暫無可先刪除 detail-box -->
+          <div class="detail-box">
+            <img src="01_huizong_detail.jpg" alt="傳 宋徽宗 聽琴圖軸 局部">
+            <p class="caption">圖1-1：傳 宋徽宗《聽琴圖》軸（<strong>局部</strong>：撫琴者與兩側聽者姿態）<br>【簡短細部補充說明，不計入正文總字數】</p>
+          </div>
+        </div>
+
+        <div class="exhibit-info">
+          <p class="section-label">Exhibit 01</p>
+          <h3>傳 宋徽宗《聽琴圖》軸</h3>
+          <div class="metadata">
+            作者：傳 趙佶（宋徽宗，1082–1135）<br>
+            年代：北宋｜媒材：絹本設色<br>
+            尺寸：縱 147.2 厘米，橫 51.3 厘米<br>
+            收藏：北京故宮博物院
+          </div>
+          <div class="exhibit-text">
+            <p>【請在此貼上你們撰寫的展品介紹正文，每件建議 400–500 字。】</p>
+            <p>【引導觀眾觀察畫面中央撫琴帝王與左右朝臣的高低位置、服飾與傾聽姿態，分析琴聲如何轉化為政治秩序的視覺修辭。】</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 第二單元 -->
+    <section id="unit2">
+      <div class="unit-banner">
+        <p class="section-label">Unit 02 · 第二單元</p>
+        <h3>閨閣與私密：性別視角下的聽覺空間</h3>
+        <p>【選填：70–130 字單元介紹。說明撫琴者身分轉換為女性後，畫面空間距離、窺視與私密聽覺如何改寫「聽琴」母題。】</p>
+      </div>
+
+      <!-- 展品 02（請複製此 article 區塊擴充至總共 6 或 8 件作品） -->
+      <article class="exhibit-item">
+        <div class="artwork-frame">
+          <img src="02_chenhongshou_full.jpg" alt="明 陳洪綬 聽琴圖軸">
+          <p class="caption">圖2：明 陳洪綬《聽琴圖》軸（全圖）｜圖片來源：北京故宮博物院</p>
+        </div>
+
+        <div class="exhibit-info">
+          <p class="section-label">Exhibit 02</p>
+          <h3>明 陳洪綬《聽琴圖》軸</h3>
+          <div class="metadata">
+            作者：陳洪綬（1598–1652）<br>
+            年代：明代｜媒材：絹本設色<br>
+            尺寸：縱 115.6 厘米，橫 42.3 厘米<br>
+            收藏：北京故宮博物院
+          </div>
+          <div class="exhibit-text">
+            <p>【請在此貼上你們撰寫的展品介紹正文，每件建議 400–500 字。】</p>
+            <p>【對比撫琴女子的端莊神態、侍女排隊恭聽的秩序，以及畫面邊緣男子側耳傾聽的身體語言。】</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 結語 -->
+    <section id="conclusion">
+      <div class="essay-block">
+        <p class="section-label">Conclusion</p>
+        <h2>結語</h2>
+        <p>【請在此貼上你們小組撰寫的「結語」，建議字數控制在 200–300 字。】</p>
+        <p>【總結「聽琴」母題在不同時代的視覺轉換，回應展覽核心問題。】</p>
+      </div>
+    </section>
+
+    <!-- 參考文獻與策展團隊分工 -->
+    <footer id="credits">
+      <div class="footer-grid">
+        <div>
+          <h3>參考文獻與圖片來源</h3>
+          <ul>
+            <li>北京故宮博物院數字文物庫：https://digicol.dpm.org.cn/</li>
+            <li>【請補上其餘收藏機構官方網頁與學術參考書目，需與 Word 文檔一致】</li>
+          </ul>
+        </div>
+        <div>
+          <h3>策展團隊與分工</h3>
+          <ul>
+            <li><strong>組員一姓名：</strong>展覽主題構思、導言與結語撰寫</li>
+            <li><strong>組員二姓名：</strong>展品 01–02 文字撰寫與文獻核實</li>
+            <li><strong>組員三姓名：</strong>展品 03–04 文字撰寫與圖像細節整理</li>
+            <li><strong>組員四姓名：</strong>全稿文字統整、Word 文檔排版與展覽網頁製作</li>
+          </ul>
+          <p style="font-size: 0.78rem; color: #737373; margin-top: 12px;">
+            （註：依作業規定，網頁僅列明組員姓名與主要分工，學號僅載於提交之 Word 文檔中。）
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
